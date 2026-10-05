@@ -1,0 +1,25 @@
+[package]
+name = "yzu-comment"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "扬州大学教务系统「课堂教师」教学评估自动完成工具 (Rust 版)"
+repository = "https://github.com/thanatosmoe/yzu-comment-rs"
+
+[[bin]]
+name = "yzu-comment"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0"
+chromiumoxide = "0.9"
+clap = { version = "4.6", features = ["derive"] }
+futures = "0.3"
+rpassword = "7.5"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1", features = ["full"] }
+
+[profile.release]
+lto = true
+codegen-units = 1
